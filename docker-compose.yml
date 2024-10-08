@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  encurtador-app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - JAVA_OPTS=-Xms256m -Xmx512m
+    networks:
+      - encurtador-net
+    restart: unless-stopped
+
+networks:
+  encurtador-net:
+    driver: bridge
