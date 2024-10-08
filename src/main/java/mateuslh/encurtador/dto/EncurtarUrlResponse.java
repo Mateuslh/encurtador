@@ -9,4 +9,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class EncurtarUrlResponse {
     private String urlEncurtada;
+    private String urlBase;
 }

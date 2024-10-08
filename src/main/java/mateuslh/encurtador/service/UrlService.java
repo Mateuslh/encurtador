@@ -40,8 +40,9 @@ public class UrlService {
             );
 
             atualizarEstatisticas(inicio);
-
-            return response.getBody();
+            EncurtarUrlResponse encurtarUrlResponse = response.getBody();
+            encurtarUrlResponse.setUrlBase(request.getUrl());
+            return encurtarUrlResponse;
         } catch (HttpClientErrorException e) {
             throw new EncurtadorApiException("Erro ao acessar API de encurtamento. Verifique a requisição.", e.getStatusCode());
         } catch (HttpServerErrorException e) {
