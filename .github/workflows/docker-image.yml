@@ -36,9 +36,6 @@ jobs:
       - name: Status docker
         run: docker ps
 
-      - name: test
-        run: exit 1
-
       - name: Wait for the app to be ready
         run: |
           for i in {1..10}; do
