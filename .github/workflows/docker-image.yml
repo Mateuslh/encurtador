@@ -1,4 +1,4 @@
-name: Build and Test Docker
+name: Build and Test
 
 on:
   push:
@@ -32,6 +32,9 @@ jobs:
 
     - name: Test Docker image
       run: docker run -d -p 8080:8080 encurtador-app
+
+    - name: Status docker
+      run: docker ps
 
     - name: Check if the app is running
       run: curl http://localhost:8080/api/sobre
